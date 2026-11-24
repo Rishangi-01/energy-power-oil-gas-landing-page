@@ -997,15 +997,15 @@
               "ariaLabel": "Mobile navigation",
               "phoneLabel": "",
               "phoneHref": "",
-              "emailLabel": "info@helionexsolar.com",
-              "emailHref": "mailto:info@helionexsolar.com"
+              "emailLabel": "info@XYZ.com",
+              "emailHref": "mailto:info@XYZ.com"
             },
             "addressLines": [
               "123, Solar Park,",
               "New Delhi – 110001"
             ],
             "emails": [
-              "info@helionexsolar.com"
+              "info@XYZ.com"
             ],
             "phones": [
               ""
@@ -2187,7 +2187,7 @@
                 "icon": "Mail",
                 "symbol": "✉",
                 "title": "Email Us",
-                "href": "mailto:info@helionexsolar.com",
+                "href": "mailto:info@XYZ.com",
                 "field": "emails"
               },
               {
@@ -2223,7 +2223,7 @@
               "mobileEyebrow": "Contact Us",
               "requiredMarker": "*",
               "emailLabel": "Email Us",
-              "emailValue": "info@helionexsolar.com",
+              "emailValue": "info@XYZ.com",
               "phoneLabel": "Call Us",
               "phoneValue": "",
               "backgroundImage": "/images/hero-bg.png",
@@ -2523,8 +2523,8 @@
               },
               {
                 "title": "Email Us",
-                "value": "info@helionexsolar.com",
-                "href": "mailto:info@helionexsolar.com",
+                "value": "info@XYZ.com",
+                "href": "mailto:info@XYZ.com",
                 "icon": "Mail",
                 "symbol": "✉"
               },
@@ -2765,8 +2765,8 @@
         "location": "123, Solar Park, New Delhi – 110001",
         "phone": "",
         "phoneHref": "",
-        "email": "info@helionexsolar.com",
-        "emailHref": "mailto:info@helionexsolar.com",
+        "email": "info@XYZ.com",
+        "emailHref": "mailto:info@XYZ.com",
         "homeAriaLabel": "Go to homepage",
         "navLinks": [
           { "name": "Home", "href": "#home" },
@@ -3220,12 +3220,12 @@
           {
             "icon": "location",
             "title": "Our Location",
-            "lines": ["123, Solar Park,", "New Delhi – 110001"]
+            "lines": ["742 Evergreen Terrace,", "62704, United States"]
           },
           {
             "icon": "email",
             "title": "Email Us",
-            "lines": ["info@helionexsolar.com"]
+            "lines": ["info@XYZ.com"]
           },
           {
             "icon": "CalendarClock",
@@ -3293,8 +3293,8 @@
           },
           {
             "icon": "email",
-            "text": "info@helionexsolar.com",
-            "href": "mailto:info@helionexsolar.com"
+            "text": "info@XYZ.com",
+            "href": "mailto:info@XYZ.com"
           },
           {
             "icon": "location",

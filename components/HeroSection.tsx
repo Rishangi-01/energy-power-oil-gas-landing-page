@@ -132,7 +132,7 @@ const HeroSection = () => {
 
           {/* ================= IMAGE SHOWCASE ================= */}
 
-          <div className="relative mx-auto mt-9 min-h-[300px] max-w-[1050px] sm:mt-12 sm:min-h-[380px] md:mt-14 md:min-h-[420px] lg:min-h-[420px]">
+          <div className="relative mx-auto mt-9 min-h-[350px] max-w-[1050px] sm:mt-12 sm:min-h-[380px] md:mt-14 md:min-h-[420px] lg:min-h-[420px]">
             {/* IMAGE 1 - LEFT ENGINEER */}
             <motion.div
               initial={{
@@ -151,7 +151,7 @@ const HeroSection = () => {
                 ease: "easeOut",
               }}
               whileHover={reduceMotion ? {} : { y: -8 }}
-              className="absolute left-[2%] top-[5%] z-10 h-[255px] w-[38%] overflow-hidden rounded-[20px] border-[3px] border-white shadow-[0_10px_30px_rgba(15,35,70,0.17)] sm:h-[340px] md:h-[370px] lg:left-[2%] lg:h-[370px]"
+              className="absolute left-0 top-0 z-10 h-[160px] w-[48%] overflow-hidden rounded-[20px] border-[3px] border-white shadow-[0_10px_30px_rgba(15,35,70,0.17)] sm:left-[2%] sm:top-[5%] sm:h-[340px] sm:w-[38%] md:h-[370px] lg:left-[2%] lg:h-[370px]"
             >
               <Image
                 src={heroContentData.images.shield.src}
@@ -178,7 +178,7 @@ const HeroSection = () => {
                 delay: 0.75,
               }}
               whileHover={reduceMotion ? {} : { y: -8 }}
-              className="absolute bottom-[-2%] left-[26%] z-20 h-[150px] w-[24%] overflow-hidden rounded-[18px] border-[3px] border-white shadow-[0_10px_30px_rgba(15,35,70,0.17)] sm:h-[190px] md:h-[210px]"
+              className="absolute bottom-0 left-0 z-20 h-[145px] w-[48%] overflow-hidden rounded-[18px] border-[3px] border-white shadow-[0_10px_30px_rgba(15,35,70,0.17)] sm:bottom-[-2%] sm:left-[26%] sm:h-[190px] sm:w-[24%] md:h-[210px]"
             >
               <Image
                 src={heroContentData.images.coins.src}
@@ -204,7 +204,7 @@ const HeroSection = () => {
                 delay: 0.9,
               }}
               whileHover={reduceMotion ? {} : { y: -8 }}
-              className="absolute right-[25%] top-[18%] z-20 h-[235px] w-[34%] overflow-hidden rounded-[20px] border-[3px] border-white shadow-[0_10px_30px_rgba(15,35,70,0.18)] sm:h-[285px] md:h-[320px] lg:right-[25%] lg:h-[320px]"
+              className="absolute right-0 top-0 z-20 h-[160px] w-[48%] overflow-hidden rounded-[20px] border-[3px] border-white shadow-[0_10px_30px_rgba(15,35,70,0.18)] sm:right-[25%] sm:top-[18%] sm:h-[285px] sm:w-[34%] md:h-[320px] lg:right-[25%] lg:h-[320px]"
             >
               <Image
                 src={heroContentData.images.growth.src}
@@ -232,7 +232,7 @@ const HeroSection = () => {
                 delay: 0.6,
               }}
               whileHover={reduceMotion ? {} : { y: -8 }}
-              className="absolute right-[2%] top-[8%] z-10 h-[250px] w-[27%] overflow-hidden rounded-[20px] border-[3px] border-white shadow-[0_10px_30px_rgba(15,35,70,0.17)] sm:h-[320px] md:h-[350px]"
+              className="absolute bottom-0 right-0 z-10 h-[145px] w-[48%] overflow-hidden rounded-[20px] border-[3px] border-white shadow-[0_10px_30px_rgba(15,35,70,0.17)] sm:bottom-auto sm:right-[2%] sm:top-[8%] sm:h-[320px] sm:w-[27%] md:h-[350px]"
             >
               <Image
                 src={heroContentData.images.commercial.src}
@@ -261,7 +261,7 @@ const HeroSection = () => {
                 duration: 0.8,
                 delay: 1,
               }}
-              className="absolute left-[26%] top-[16%] z-30 flex min-h-[95px] w-[200px] items-center gap-3 rounded-[17px] border border-[#edf0f3] bg-white px-4 py-3 shadow-[0_10px_30px_rgba(20,35,65,0.16)] sm:left-[25%] sm:top-[15%] sm:min-h-[105px] sm:w-[220px] sm:gap-4 md:w-[240px]"
+              className="absolute left-1/2 top-1/2 z-30 flex min-h-[95px] w-[200px] -translate-x-1/2 -translate-y-1/2 items-center gap-3 rounded-[17px] border border-[#edf0f3] bg-white px-4 py-3 shadow-[0_10px_30px_rgba(20,35,65,0.16)] sm:left-[25%] sm:top-[15%] sm:min-h-[105px] sm:w-[220px] sm:translate-x-0 sm:translate-y-0 sm:gap-4 md:w-[240px]"
             >
               {/* ORANGE PEOPLE ICON */}
               <motion.div
