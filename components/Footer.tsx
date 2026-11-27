@@ -78,7 +78,7 @@ const Footer = () => {
                 width={footerContentData.excellenceImage.width}
                 height={footerContentData.excellenceImage.height}
                 priority
-                className="h-auto w-[280px] max-w-full object-contain object-left sm:w-[320px]"
+                className="h-auto w-[155px] max-w-full object-contain object-left sm:w-[320px]"
               />
             </Link>
 

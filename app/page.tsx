@@ -19,8 +19,8 @@ export default function Home() {
       <Suspense fallback={null}>
         <Testimonials />
       </Suspense>
-      <ContactSection />
       <FaqSection />
+      <ContactSection />
     </div>
   );
 }

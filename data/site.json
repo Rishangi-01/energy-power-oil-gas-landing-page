@@ -1017,25 +1017,25 @@
                 "icon": "FaFacebookF",
                 "symbol": "f",
                 "label": "Facebook",
-                "href": "#"
+                "href": "https://www.facebook.com/"
               },
               {
                 "icon": "FaInstagram",
                 "symbol": "◎",
                 "label": "Instagram",
-                "href": "#"
+                "href": "https://www.instagram.com/"
               },
               {
                 "icon": "FaYoutube",
                 "symbol": "▶",
                 "label": "YouTube",
-                "href": "#"
+                "href": "https://www.youtube.com/"
               },
               {
                 "icon": "FaLinkedinIn",
                 "symbol": "in",
                 "label": "LinkedIn",
-                "href": "#"
+                "href": "https://in.linkedin.com/"
               }
             ],
             "hours": [
@@ -2778,10 +2778,10 @@
           { "name": "", "href": "" }
         ],
         "socialLinks": [
-          { "name": "Facebook", "href": "#", "icon": "facebook", "size": 17 },
-          { "name": "LinkedIn", "href": "#", "icon": "linkedin", "size": 19 },
-          { "name": "X", "href": "#", "icon": "x", "size": 19 },
-          { "name": "YouTube", "href": "#", "icon": "youtube", "size": 20 }
+          { "name": "Facebook", "href": "https://www.facebook.com/", "icon": "facebook", "size": 17 },
+          { "name": "LinkedIn", "href": "https://in.linkedin.com/", "icon": "linkedin", "size": 19 },
+          { "name": "X", "href": "https://twitter.com/", "icon": "x", "size": 19 },
+          { "name": "YouTube", "href": "https://www.youtube.com/", "icon": "youtube", "size": 20 }
         ],
         "contactLabel": "Contact Us",
         "contactHref": "#contact",
@@ -3264,11 +3264,11 @@
         "brandLinkHref": "/",
         "description": "Reliable, efficient, and sustainable solar energy solutions for homes, businesses, and industries.",
         "socialLinks": [
-          { "name": "Facebook", "href": "#", "icon": "facebook" },
-          { "name": "LinkedIn", "href": "#", "icon": "linkedin" },
-          { "name": "Instagram", "href": "#", "icon": "instagram" },
-          { "name": "YouTube", "href": "#", "icon": "youtube" },
-          { "name": "X", "href": "#", "icon": "x" }
+          { "name": "Facebook", "href": "https://www.facebook.com/", "icon": "facebook" },
+          { "name": "LinkedIn", "href": "https://in.linkedin.com/", "icon": "linkedin" },
+          { "name": "Instagram", "href": "https://www.instagram.com/", "icon": "instagram" },
+          { "name": "YouTube", "href": "https://www.youtube.com/", "icon": "youtube" },
+          { "name": "X", "href": "https://twitter.com/", "icon": "x" }
         ],
         "quickLinksHeading": "Quick Links",
         "quickLinks": [
@@ -3288,8 +3288,8 @@
         "contactDetails": [
           {
             "icon": "phone",
-            "text": "",
-            "href": ""
+            "text": "+10000000000",
+            "href": "tel:+10000000000"
           },
           {
             "icon": "email",

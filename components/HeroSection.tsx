@@ -33,8 +33,8 @@ const HeroSection = () => {
           backgroundImage: `url('${heroContentData.backgroundImage}')`,
         }}
       >
-        <div className="relative z-10 mx-auto max-w-[1600px] pb-12 pt-[118px] sm:pt-[130px] lg:pt-[136px] px-5 sm:px-8 lg:px-12">
-          {/* ================= HEADING AREA ================= */}
+        <div className="relative z-10 mx-auto max-w-[1600px] pb-12 pt-[118px] sm:pt-[130px] lg:pt-[12rem] px-5 sm:px-8 lg:px-12">
+        
 
           <div className="relative z-10 mx-auto max-w-[1050px] text-center">
             {/* TOP TAGLINE */}
@@ -47,7 +47,7 @@ const HeroSection = () => {
             >
               <span className="h-[2px] w-10 bg-[#ff7900] sm:w-16" />
 
-              <div className="flex flex-wrap items-center justify-center gap-2.5 text-[10px] font-extrabold tracking-[1.5px] text-[#101f4b] sm:gap-4 sm:text-[13px] sm:tracking-[2px]">
+              <div className="flex flex-wrap items-center justify-center gap-1.5 text-[9px] font-extrabold tracking-[1.5px] text-[#101f4b] sm:gap-4 sm:text-[13px] sm:tracking-[2px]">
                 {heroContentData.badge.map((badge, index) => (
                   <Fragment key={badge}>
                     {index > 0 && (
@@ -70,7 +70,7 @@ const HeroSection = () => {
                 ...transition,
                 delay: 0.15,
               }}
-              className="text-[25px] font-extrabold leading-[1.12] tracking-[-1.5px] text-[#0c204e] sm:text-[48px] sm:tracking-[-2px] md:text-[58px] lg:text-[60px] xl:text-[58px]"
+              className="text-[25px] font-extrabold leading-[1.12] tracking-[-1.5px] text-[#0c204e] sm:text-[48px] sm:tracking-[-2px] md:text-[58px] lg:text-[60px] xl:text-[68px]"
             >
               {heroContentData.heading}{" "}
               <span className="bg-gradient-to-r from-[#ff7900] to-[#ff5700] bg-clip-text text-transparent">
@@ -124,7 +124,7 @@ const HeroSection = () => {
                 ...transition,
                 delay: 0.3,
               }}
-              className="mx-auto mt-5 max-w-[650px] text-[13px] font-medium leading-[1.7] text-[#41444c] sm:text-[15px] md:text-[16px]"
+              className="mx-auto mt-5 max-w-[650px] text-[13px] font-medium leading-[1.7] text-[#41444c] sm:text-[15px] md:text-[20px]"
             >
               {heroContentData.descriptionLines.join(" ")}
             </motion.p>

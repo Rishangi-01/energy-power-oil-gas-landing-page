@@ -132,7 +132,7 @@ const WhyChooseUs = () => {
             {whyChooseUsContentData.description}
           </motion.p>
 
-          {/* ================= FEATURE GRID ================= */}
+          
 
           <div className="mt-9 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-x-5 sm:gap-y-7 lg:mt-10 lg:gap-x-6 xl:gap-x-7">
 

@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { finSecureBrandData, navbarContentData } from "@/data";
 
 const navLinks = navbarContentData.navLinks.filter(
@@ -10,53 +10,60 @@ const navLinks = navbarContentData.navLinks.filter(
 );
 
 export default function Navbar() {
+  const headerRef = useRef<HTMLElement>(null);
   const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Sticky navbar shadow
+  // Keep the active item in sync with the section below the fixed header.
   useEffect(() => {
+    const sections = [
+      ...new Set([
+        ...navLinks.map((link) => link.href.replace(/^#/, "")),
+        navbarContentData.contactHref.replace(/^#/, ""),
+      ]),
+    ]
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => section !== null)
+      .sort((a, b) => {
+        if (a === b) return 0;
+        return a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING
+          ? -1
+          : 1;
+      });
+
+    let frameId: number | null = null;
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+
+      if (frameId !== null) return;
+      frameId = window.requestAnimationFrame(() => {
+        frameId = null;
+
+        if (sections.length > 0) {
+          const headerHeight =
+            headerRef.current?.getBoundingClientRect().height ?? 0;
+          let currentSection = sections[0];
+
+          for (const section of sections) {
+            if (section.getBoundingClientRect().top > headerHeight + 1) break;
+            currentSection = section;
+          }
+
+          setActiveSection(currentSection.id);
+        }
+      });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
+    handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Automatic active section detection
-  useEffect(() => {
-    const sections = navLinks
-      .map((link) =>
-        document.getElementById(link.href.replace(/^#/, ""))
-      )
-      .filter((section): section is HTMLElement => section !== null);
-
-    if (!sections.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleSections = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort(
-            (a, b) =>
-              b.intersectionRatio - a.intersectionRatio
-          );
-
-        if (visibleSections.length > 0) {
-          setActiveSection(visibleSections[0].target.id);
-        }
-      },
-      {
-        rootMargin: "-20% 0px -60% 0px",
-        threshold: [0, 0.1, 0.25, 0.5, 0.75],
-      }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+      if (frameId !== null) window.cancelAnimationFrame(frameId);
+    };
   }, []);
 
   // Close menu on navigation
@@ -75,18 +82,19 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 bg-white transition-all duration-500 ${
+      ref={headerRef}
+      className={`fixed top-0 left-0 w-full z-50 bg-white transition-all duration-500 border-b border-[#ddd] lg:py-2 ${
         scrolled
           ? "shadow-[0_5px_25px_rgba(0,0,0,0.07)]"
           : "shadow-none"
       }`}
     >
       <div className="max-w-[1600px] mx-auto px-5 sm:px-8 lg:px-12">
-        <div className="h-[82px] lg:h-[100px] flex items-center justify-between">
+        <div className="h-[82px] lg:h-[80px] flex items-center justify-between">
 
           {/* Logo */}
-          <button
-            onClick={() => handleNavigation(homeSectionId)}
+          <a
+            href={navbarContentData.homeHref}
             aria-label={navbarContentData.homeAriaLabel}
             className="shrink-0"
           >
@@ -98,7 +106,7 @@ export default function Navbar() {
               priority
               className="w-[155px] sm:w-[180px] lg:w-[195px] h-auto object-contain"
             />
-          </button>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
@@ -106,9 +114,9 @@ export default function Navbar() {
               const sectionId = link.href.replace(/^#/, "");
 
               return (
-              <button
+              <a
                 key={link.href}
-                onClick={() => handleNavigation(sectionId)}
+                href={link.href}
                 className={`nav-link relative py-3 text-[17px] xl:text-[19px] font-semibold transition-colors duration-300 ${
                   activeSection === sectionId
                     ? "text-[#ff7900]"
@@ -125,7 +133,7 @@ export default function Navbar() {
                       : "w-0"
                   }`}
                 />
-              </button>
+              </a>
               );
             })}
           </nav>
