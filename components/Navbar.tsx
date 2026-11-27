@@ -92,7 +92,7 @@ export default function Navbar() {
       <div className="max-w-[1600px] mx-auto px-5 sm:px-8 lg:px-12">
         <div className="h-[82px] lg:h-[80px] flex items-center justify-between">
 
-          {/* Logo */}
+       
           <a
             href={navbarContentData.homeHref}
             aria-label={navbarContentData.homeAriaLabel}
