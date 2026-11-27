@@ -2767,6 +2767,7 @@
         "phoneHref": "",
         "email": "info@XYZ.com",
         "emailHref": "mailto:info@XYZ.com",
+        "homeHref": "/",
         "homeAriaLabel": "Go to homepage",
         "navLinks": [
           { "name": "Home", "href": "#home" },
