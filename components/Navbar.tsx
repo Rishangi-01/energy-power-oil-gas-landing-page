@@ -15,22 +15,25 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Keep the active item in sync with the section below the fixed header.
+
   useEffect(() => {
-    const sections = [
+    const sectionIds = [
       ...new Set([
         ...navLinks.map((link) => link.href.replace(/^#/, "")),
         navbarContentData.contactHref.replace(/^#/, ""),
       ]),
-    ]
-      .map((id) => document.getElementById(id))
-      .filter((section): section is HTMLElement => section !== null)
-      .sort((a, b) => {
-        if (a === b) return 0;
-        return a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING
-          ? -1
-          : 1;
-      });
+    ];
+
+    const getSections = () =>
+      sectionIds
+        .map((id) => document.getElementById(id))
+        .filter((section): section is HTMLElement => section !== null)
+        .sort((a, b) => {
+          if (a === b) return 0;
+          return a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING
+            ? -1
+            : 1;
+        });
 
     let frameId: number | null = null;
     const handleScroll = () => {
@@ -39,6 +42,7 @@ export default function Navbar() {
       if (frameId !== null) return;
       frameId = window.requestAnimationFrame(() => {
         frameId = null;
+        const sections = getSections();
 
         if (sections.length > 0) {
           const headerHeight =
@@ -59,9 +63,13 @@ export default function Navbar() {
     window.addEventListener("resize", handleScroll, { passive: true });
     handleScroll();
 
+    const sectionObserver = new MutationObserver(handleScroll);
+    sectionObserver.observe(document.body, { childList: true, subtree: true });
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
+      sectionObserver.disconnect();
       if (frameId !== null) window.cancelAnimationFrame(frameId);
     };
   }, []);
